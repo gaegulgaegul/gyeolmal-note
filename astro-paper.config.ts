@@ -28,8 +28,7 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github", url: "https://github.com/gaegulgaegul/gyeolmal-note" },
-    { name: "mail",   url: "mailto:contact@gaegul.house" },
+    { name: "mail", url: "mailto:contact@gaegul.house" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
