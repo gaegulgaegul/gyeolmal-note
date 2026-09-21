@@ -7,7 +7,7 @@ description: "결말노트 운영진에게 문의하는 방법을 안내합니�
 
 콘텐츠 오류 신고, 저작권 관련 문의, 광고/제휴 문의 등은 아래 이메일로 연락해 주세요.
 
-- 이메일: contact@gyeolmalnote.com
+- 이메일: contact@gaegul.house
 
 ## 응답 시간
 
