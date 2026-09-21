@@ -3,6 +3,7 @@ author: "결말노트"
 pubDatetime: 2026-09-22T03:00:00Z
 title: "스캔들 넷플릭스 시청 가이드"
 tags: ["OTT 결말"]
+draft: true
 description: "넷플릭스 스캔들의 기본 정보, 등장인물, 원작 계보를 스포일러 없이 정리했습니다."
 ---
 
