@@ -1,6 +1,6 @@
 ---
 author: "결말노트"
-pubDatetime: 2026-09-27T02:00:00Z
+pubDatetime: 2026-09-25T12:40:00Z
 title: "들쥐 등장인물별 결말 총정리"
 tags: ["OTT 결말", "들쥐", "등장인물", "류준열", "설경구", "이규형", "넷플릭스"]
 draft: false
