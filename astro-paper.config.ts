@@ -2,11 +2,11 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://gyeolmal.gaegul.house/",
+    url: "https://gyeolmal.poljjak.me/",
     title: "결말노트",
     description: "넷플릭스, 티빙 등 OTT 오리지널 시리즈의 결말을 정리하고 해석하는 블로그입니다.",
     author: "결말노트",
-    profile: "https://gyeolmal.gaegul.house/about",
+    profile: "https://gyeolmal.poljjak.me/about",
     ogImage: "default-og.jpg",
     lang: "ko",
     timezone: "Asia/Seoul",
