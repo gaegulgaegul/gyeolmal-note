@@ -14,3 +14,11 @@
 /posts/the-scandal-ending/ /posts/the-scandal-complete-guide/ 301
 /posts/the-scandal-characters /posts/the-scandal-complete-guide/ 301
 /posts/the-scandal-characters/ /posts/the-scandal-complete-guide/ 301
+/posts/the-perfect-lie-guide /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-guide/ /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-original-comparison /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-original-comparison/ /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-ending /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-ending/ /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-characters /posts/the-perfect-lie-complete-guide/ 301
+/posts/the-perfect-lie-characters/ /posts/the-perfect-lie-complete-guide/ 301
