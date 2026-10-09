@@ -25,7 +25,9 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: page =>
-        config.features?.showArchives !== false || !page.endsWith("/archives/"),
+        // 태그/검색 페이지는 얇은 보관함 페이지라 색인 대상에서 제외한다
+        !/\/(tags|search)\//.test(new URL(page).pathname) &&
+        (config.features?.showArchives !== false || !page.endsWith("/archives/")),
     }),
   ],
   i18n: {

@@ -37,7 +37,7 @@ const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 ---
 
-<Layout title={`${t.pages.tagTitle}: ${tagName} | ${config.site.title}`}>
+<Layout noindex title={`${t.pages.tagTitle}: ${tagName} | ${config.site.title}`}>
   <Header />
 
   <Breadcrumb />
