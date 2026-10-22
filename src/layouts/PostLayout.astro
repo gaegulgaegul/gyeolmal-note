@@ -4,6 +4,8 @@ import config from "@/config";
 
 type Props = {
   title?: string;
+  /** 글 제목 그대로(사이트명 접미사 없이). JSON-LD headline 에 쓴다 */
+  headline?: string;
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
@@ -13,31 +15,47 @@ type Props = {
 
 const { site } = config;
 
-const { title, description, ogImage, canonicalURL, pubDatetime, modDatetime } =
-  Astro.props;
+const {
+  title,
+  headline,
+  description,
+  ogImage,
+  canonicalURL,
+  pubDatetime,
+  modDatetime,
+} = Astro.props;
+
+const pageURL = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+
+// 결말노트는 개인이 아니라 사이트 명의로 쓰므로 author·publisher 모두 같은 Organization
+const organization = {
+  "@type": "Organization",
+  "@id": new URL("#organization", site.url).href,
+  name: site.title,
+  url: site.url,
+};
+
+// 수정 이력이 없으면 발행일이 곧 마지막 수정일이다
+const lastModified = modDatetime ?? pubDatetime;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: title ?? site.title,
+  headline: headline ?? title ?? site.title,
+  ...(description && { description }),
   image: ogImage,
+  url: pageURL,
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageURL },
+  inLanguage: site.lang,
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
-    {
-      "@type": "Person",
-      name: site.author,
-      ...(site.profile && { url: site.profile }),
-    },
-  ],
+  ...(lastModified && { dateModified: lastModified.toISOString() }),
+  author: organization,
+  publisher: organization,
 };
 ---
 
-<Layout {title} {description} {ogImage} {canonicalURL}>
+<Layout {title} {description} {ogImage} {canonicalURL} ogType="article">
   <Fragment slot="head">
-    <!-- Override og:type for article pages -->
-    <meta property="og:type" content="article" />
-
     {
       pubDatetime && (
         <meta
