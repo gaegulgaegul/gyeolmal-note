@@ -18,6 +18,10 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+import { getPostLastmodMap } from "./src/utils/getPostLastmodMap";
+
+const postLastmods = getPostLastmodMap("./src/content/posts");
+const POST_URL_RE = /\/posts\/([^/]+)\/$/;
 
 export default defineConfig({
   site: config.site.url,
@@ -28,6 +32,12 @@ export default defineConfig({
         // 태그/검색 페이지는 얇은 보관함 페이지라 색인 대상에서 제외한다
         !/\/(tags|search)\//.test(new URL(page).pathname) &&
         (config.features?.showArchives !== false || !page.endsWith("/archives/")),
+      // 구글은 IndexNow 를 안 쓰므로 새 글·수정 글은 lastmod 로 알린다
+      serialize: item => {
+        const slug = POST_URL_RE.exec(new URL(item.url).pathname)?.[1];
+        const lastmod = slug ? postLastmods.get(slug) : undefined;
+        return lastmod ? { ...item, lastmod: lastmod.toISOString() } : item;
+      },
     }),
   ],
   i18n: {
